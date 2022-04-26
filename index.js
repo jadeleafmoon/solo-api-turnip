@@ -1,11 +1,11 @@
 'use strict';
 
-const { products } = require('./data/products.json');
+let { products } = require('./data/products.json');
 
 const express = require('express');
 const app = express();
 app.use(express.json());
-const PORT = 4040;
+const PORT = 3030;
 
 app.get('/', (req, res) => {
 	res.send('Hello World!');
@@ -32,6 +32,15 @@ app.patch('/products/:id', (req, res) => {
     }
 
     res.status(200).send(`The product with id = ${id} has been updated`);
+});
+
+app.delete('/products/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+
+    products = products.filter(product => product.id !== id );
+
+    res.send(`Item with id = ${id} has been deleted.`);
+
 });
 
 app.listen(PORT, () => console.log(`The server is running on port ${PORT}`));

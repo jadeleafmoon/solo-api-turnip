@@ -1,0 +1,25 @@
+{
+  "name": "solo-api-turnip",
+  "version": "1.0.0",
+  "description": "Welcome to Turnip!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadeleafmoon/solo-api-turnip.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jadeleafmoon/solo-api-turnip/issues"
+  },
+  "homepage": "https://github.com/jadeleafmoon/solo-api-turnip#readme",
+  "dependencies": {
+    "express": "^4.18.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

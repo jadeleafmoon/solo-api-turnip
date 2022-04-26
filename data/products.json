@@ -1,0 +1,19 @@
+{
+	"products": [
+		{
+			"id": "001",
+			"name": "Blue Ball",
+			"price": 5
+		},
+		{
+			"id": "002",
+			"name": "Green Golf Club",
+			"price": 10
+		},
+		{
+			"id": "003",
+			"name": "Yellow Yarn",
+			"price": 20
+		}
+	]
+}

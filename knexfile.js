@@ -5,7 +5,7 @@
  */
 module.exports = {
 	development : {
-		client     : 'pg',
+		client     : 'postgresql',
 		connection : {
 			host     : '127.0.0.1',
 			user     : 'ravi',
@@ -14,7 +14,7 @@ module.exports = {
 			charset  : 'utf8'
 		},
 		migrations : {
-      tabelName: 'knex_migrations',
+			tabelName : 'knex_migrations',
 			directory : './db/migrations'
 		},
 		seeds      : {

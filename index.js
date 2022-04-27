@@ -24,7 +24,16 @@ app.get('/products', (req, res) => {
 });
 
 app.get('/testdb', (req, res) => {
-	
+	database('products')
+		.select({
+			id    : 'id',
+			name  : 'name',
+			price : 'price'
+		})
+		.then((value) => {
+			console.log('🔥 value', value);
+            res.send(value);
+		});
 });
 
 app.post('/products', (req, res) => {

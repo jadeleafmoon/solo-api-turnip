@@ -13,7 +13,6 @@ const knexConfig = require('./knexfile');
 const config = knexConfig[process.env.NODE_ENV || 'development'];
 const knex = require('knex')(config);
 
-
 // Endpoints
 app.get('/', (req, res) => {
 	res.send('Hello World!');
@@ -27,32 +26,29 @@ app.get('/products', (req, res) => {
 			price : 'price'
 		})
 		.then((result) => {
-            res.status(200).send(result);
+			res.status(200).send(result);
 		});
 });
 
 app.post('/products', (req, res) => {
 	const newProduct = req.body;
 
-	knex('products')
-		.insert(newProduct)
-		.returning('*')
-		.then(result => {
-			res.status(200).send(`The product ${result[0].name} has been inserted`);
-		});
+	knex('products').insert(newProduct).returning('*').then((result) => {
+		res.status(200).send(`The product ${result[0].name} has been inserted`);
+	});
 });
 
 app.patch('/products/:id', (req, res) => {
 	const id = parseInt(req.params.id);
-	const updates = req.body;
+	const productUpdates = req.body;
 
-	const foundProduct = products.find((product) => product.id === id);
-
-	for (const key in updates) {
-		foundProduct[key] = updates[key];
-	}
-
-	res.status(200).send(`The product with id = ${id} has been updated`);
+	knex('products')
+		.where('id', '=', id)
+		.update(productUpdates)
+		.returning('*')
+		.then(result => {
+			res.status(200).send(`The product ${productUpdates.name} with id ${id} has been updated`);
+		});
 });
 
 app.delete('/products/:id', (req, res) => {

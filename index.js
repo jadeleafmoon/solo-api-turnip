@@ -27,15 +27,19 @@ app.get('/products', (req, res) => {
 			price : 'price'
 		})
 		.then((result) => {
-			console.log('🔥 GET result', result);
             res.status(200).send(result);
 		});
 });
 
 app.post('/products', (req, res) => {
 	const newProduct = req.body;
-	products.push(newProduct);
-	res.status(200).send(`The product ${newProduct.name} has been added.`);
+
+	knex('products')
+		.insert(newProduct)
+		.returning('*')
+		.then(result => {
+			res.status(200).send(`The product ${result[0].name} has been inserted`);
+		});
 });
 
 app.patch('/products/:id', (req, res) => {

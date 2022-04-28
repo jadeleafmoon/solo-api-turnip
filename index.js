@@ -15,7 +15,7 @@ const knex = require('knex')(config);
 
 // Endpoints
 app.get('/', (req, res) => {
-	res.send('Hello World!');
+	res.send('Hello and welcome to the Turnip API!');
 });
 
 app.get('/products', (req, res) => {

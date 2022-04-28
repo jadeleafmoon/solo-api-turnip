@@ -9,7 +9,7 @@ Turnip is an app that allows you to buy and sell used items.
 ### What is this API?
 With this API, you'll be able to browse the available products.
 
-### Getting Started
+## Getting Started
 
 Steps to using this API:
 1. Clone this repo to your computer
@@ -56,7 +56,7 @@ Request Body Example
 {
 	"id": 4,
     "name": "Brush",
-	"price": 99.99
+    "price": 99.99
 }
 ```
 
@@ -76,7 +76,7 @@ Request Body Example
 ```
 {
     "name": "Hairbrush",
-	"price": 80.50
+    "price": 80.50
 }
 ```
 

@@ -34,7 +34,7 @@ app.post('/products', (req, res) => {
 	const newProduct = req.body;
 
 	knex('products').insert(newProduct).returning('*').then((result) => {
-		res.status(200).send(`The product ${result[0].name} has been inserted`);
+		res.status(201).send(`The product ${result[0].name} has been inserted`);
 	});
 });
 
@@ -54,9 +54,17 @@ app.patch('/products/:id', (req, res) => {
 app.delete('/products/:id', (req, res) => {
 	const id = parseInt(req.params.id);
 
-	products = products.filter((product) => product.id !== id);
+	return knex("products")
+		.where('id', '=', id)
+		.del()
+		.returning('*')
+		.then(result => {
+			console.log("🔥 DEL result:", result);
+			res.status(200).send(`The product ${result[0].name} with id ${id} has been deleted`);
+		})
+	// products = products.filter((product) => product.id !== id);
 
-	res.send(`Item with id = ${id} has been deleted.`);
+	// res.send(`Item with id = ${id} has been deleted.`);
 });
 
 app.listen(PORT, () => console.log(`The server is running on port ${PORT}`));

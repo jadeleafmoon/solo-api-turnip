@@ -11,8 +11,8 @@ const PORT = 3030;
 // initialize Knex
 const knexConfig = require('./knexfile');
 const config = knexConfig[process.env.NODE_ENV || 'development'];
-const knex = require('knex');
-const database = knex(config);
+const knex = require('knex')(config);
+
 
 // Endpoints
 app.get('/', (req, res) => {
@@ -20,19 +20,15 @@ app.get('/', (req, res) => {
 });
 
 app.get('/products', (req, res) => {
-	res.status(200).send(products);
-});
-
-app.get('/testdb', (req, res) => {
-	database('products')
+	knex('products')
 		.select({
 			id    : 'id',
 			name  : 'name',
 			price : 'price'
 		})
-		.then((value) => {
-			console.log('🔥 value', value);
-            res.send(value);
+		.then((result) => {
+			console.log('🔥 GET result', result);
+            res.status(200).send(result);
 		});
 });
 

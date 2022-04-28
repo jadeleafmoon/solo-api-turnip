@@ -34,7 +34,7 @@ app.post('/products', (req, res) => {
 	const newProduct = req.body;
 
 	knex('products').insert(newProduct).returning('*').then((result) => {
-		res.status(201).send(`The product ${result[0].name} has been inserted`);
+		res.status(201).send(`The product ${result[0].name} has been added`);
 	});
 });
 

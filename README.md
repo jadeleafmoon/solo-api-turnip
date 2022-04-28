@@ -2,8 +2,6 @@
 
 This was created during my time as a student at Code Chrysalis.
 
----
-
 ## What is Turnip?
 
 Turnip is an app that allows you to buy and sell used items.
@@ -15,8 +13,6 @@ With this API, you'll be able to browse the available products.
 
 Steps to using this API:
 1. Clone this repo to your computer
-
----
 
 ## Endpoints
 

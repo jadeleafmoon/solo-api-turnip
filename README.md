@@ -14,6 +14,7 @@ With this API, you'll be able to browse the available products.
 Steps to using this API:
 1. Clone this repo to your computer
 
+
 ## Endpoints
 
 ### **GET /products**
@@ -54,7 +55,7 @@ POST /products/
 Request Body Example
 ```
 {
-	"id": 4,
+    "id": 4,
     "name": "Brush",
     "price": 99.99
 }

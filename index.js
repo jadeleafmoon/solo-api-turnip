@@ -46,22 +46,28 @@ app.patch('/products/:id', (req, res) => {
 		.where('id', '=', id)
 		.update(productUpdates)
 		.returning('*')
-		.then(result => {
-			res.status(200).send(`The product ${productUpdates.name} with id ${id} has been updated`);
+		.then((result) => {
+			res
+				.status(200)
+				.send(
+					`The product ${productUpdates.name} with id ${id} has been updated`
+				);
 		});
 });
 
 app.delete('/products/:id', (req, res) => {
 	const id = parseInt(req.params.id);
 
-	return knex("products")
+	return knex('products')
 		.where('id', '=', id)
 		.del()
 		.returning('*')
-		.then(result => {
-			console.log("🔥 DEL result:", result);
-			res.status(200).send(`The product ${result[0].name} with id ${id} has been deleted`);
-		})
+		.then((result) => {
+			console.log('🔥 DEL result:', result);
+			res
+				.status(200)
+				.send(`The product ${result[0].name} with id ${id} has been deleted`);
+		});
 	// products = products.filter((product) => product.id !== id);
 
 	// res.send(`Item with id = ${id} has been deleted.`);

@@ -1,6 +1,6 @@
 # Welcome to the Turnip API!
 
-![image](./img/turnip-logo.png)
+<img src="drawing.jpg" alt="drawing" width="200px"/>
 
 This was created during my time as a student at Code Chrysalis.
 

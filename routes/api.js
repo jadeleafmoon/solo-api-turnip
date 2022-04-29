@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 // Initialize Knex
-const knex = require('../knex')
+const knex = require('../knex');
 
 // Endpoints
 // This route would be /api
@@ -20,6 +20,18 @@ router.get('/products', (req, res) => {
 			name  : 'name',
 			price : 'price'
 		})
+		.then((result) => {
+			res.status(200).send(result);
+		});
+});
+
+router.get('/products/:id', (req, res) => {
+    const id = req.params.id;
+
+	knex('products')
+		.select()
+		.where('id', '=', id)
+		.returning('*')
 		.then((result) => {
 			res.status(200).send(result);
 		});
@@ -63,7 +75,6 @@ router.delete('/products/:id', (req, res) => {
 				.status(200)
 				.send(`The product ${result[0].name} with id ${id} has been deleted`);
 		});
-
 });
 
 module.exports = router;

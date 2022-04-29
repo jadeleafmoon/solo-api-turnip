@@ -17,9 +17,9 @@ Steps to using this API:
 3. Run localhost:3000 in POSTMAN
 
 An example URI
-- The following will retrieve all products.
+- The following will retrieve the product with id 2.
 ```
-GET localhost:3000/products
+GET localhost:3000/products/2
 ```
 
 
@@ -51,6 +51,26 @@ Reponse
         "id": 3,
         "name": "Chocolate",
         "price": 15.99
+    }
+]
+```
+
+### **GET /products/:id**
+
+This will get a product with the specified id.
+
+Request URI Example
+```
+GET /api/products/2
+```
+
+Reponse 
+```
+[
+    {
+        "id": 2,
+        "name": "Game",
+        "price": 10.50
     }
 ]
 ```

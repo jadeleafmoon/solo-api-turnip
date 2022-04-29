@@ -13,15 +13,25 @@ With this API, you'll be able to browse the available products.
 
 Steps to using this API:
 1. Clone this repo to your computer
+2. Install and launch POSTMAN
+3. Run localhost:3000 in POSTMAN
+
+An example URI
+- The following will retrieve all products.
+```
+GET localhost:3000/products
+```
 
 
 ## Endpoints
 
 ### **GET /products**
 
+This will get all products.
+
 Request URI Example
 ```
-GET /node_modulesproducts
+GET /api/products
 ```
 
 Reponse 
@@ -49,7 +59,7 @@ Reponse
 
 Request URI Example
 ```
-POST /products/
+POST /api/products/
 ```
 
 Request Body Example
@@ -70,7 +80,7 @@ The product Brush has been added.
 
 Request URI Example
 ```
-PATCH products/4
+PATCH /api/products/4
 ```
 
 Request Body Example
@@ -90,7 +100,7 @@ The product Brush with id 4 has been updated.
 
 Request URI Example
 ```
-DELETE products/3
+DELETE /api/products/3
 ```
 
 Response

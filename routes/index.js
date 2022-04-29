@@ -61,9 +61,7 @@ router.delete('/products/:id', (req, res) => {
 				.status(200)
 				.send(`The product ${result[0].name} with id ${id} has been deleted`);
 		});
-	// products = products.filter((product) => product.id !== id);
 
-	// res.send(`Item with id = ${id} has been deleted.`);
 });
 
 module.exports = router;

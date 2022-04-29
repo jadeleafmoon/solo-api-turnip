@@ -6,7 +6,8 @@
 	"scripts": {
 		"start": "nodemon index.js",
 		"migrate": "knex migrate:latest --knexfile knexfile.js",
-		"seed": "knex seed:run --knexfile knexfile.js"
+		"seed": "knex seed:run --knexfile knexfile.js",
+		"test": "mocha --exit"
 	},
 	"repository": {
 		"type": "git",

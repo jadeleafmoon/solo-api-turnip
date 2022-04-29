@@ -77,4 +77,4 @@ router.delete('/products/:id', (req, res) => {
 		});
 });
 
-module.exports = router;
+module.exports = router ;

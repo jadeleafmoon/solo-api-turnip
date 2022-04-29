@@ -28,12 +28,12 @@ GET localhost:3000/products/2
 
 This will get all products.
 
-Request URI Example
+Request URI Example:
 ```
 GET /api/products
 ```
 
-Reponse 
+Reponse:
 ```
 [
     {
@@ -58,12 +58,12 @@ Reponse
 
 This will get a product with the specified id.
 
-Request URI Example
+Request URI Example:
 ```
 GET /api/products/2
 ```
 
-Reponse 
+Reponse:
 ```
 [
     {
@@ -76,12 +76,12 @@ Reponse
 
 ### **POST /products**
 
-Request URI Example
+Request URI Example:
 ```
 POST /api/products/
 ```
 
-Request Body Example
+Request Body Example:
 ```
 {
     "id": 4,
@@ -90,19 +90,19 @@ Request Body Example
 }
 ```
 
-Response
+Response:
 ```
 The product Brush has been added.
 ```
 
 ### **PATCH /products/:id**
 
-Request URI Example
+Request URI Example:
 ```
 PATCH /api/products/4
 ```
 
-Request Body Example
+Request Body Example:
 ```
 {
     "name": "Hairbrush",
@@ -110,19 +110,19 @@ Request Body Example
 }
 ```
 
-Response
+Response:
 ```
 The product Brush with id 4 has been updated.
 ```
 
 ### **DELETE /products/:id**
 
-Request URI Example
+Request URI Example:
 ```
 DELETE /api/products/3
 ```
 
-Response
+Response:
 ```
 The product Chocolate has been deleted.
 ```

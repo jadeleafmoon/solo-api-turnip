@@ -1,5 +1,7 @@
 # Welcome to the Turnip API!
 
+![image](./img/turnip-logo.png)
+
 This was created during my time as a student at Code Chrysalis.
 
 ### What is Turnip?

@@ -13,11 +13,10 @@ With this API, you'll be able to browse the available products.
 
 Steps to using this API:
 1. Clone this repo to your computer
-2. Install and launch POSTMAN
-3. Run localhost:3000 in POSTMAN
+2. Install and launch Postman
+3. Run localhost:3000 in Postman
 
-An example URI
-- The following will retrieve the product with id 2.
+Use the following format to make HTTP requests:
 ```
 GET localhost:3000/products/2
 ```

@@ -70,11 +70,11 @@ router.delete('/products/:id', (req, res) => {
 		.del()
 		.returning('*')
 		.then((result) => {
-			console.log('🔥 DEL result:', result);
 			res
 				.status(200)
 				.send(`The product ${result[0].name} with id ${id} has been deleted`);
 		});
 });
+
 
 module.exports = router ;

@@ -1,16 +1,15 @@
-// The base of this router is /api/
+// The base of this router is /api
 
 const express = require('express');
 const router = express.Router();
 
-// initialize Knex
-const knexConfig = require('../knexfile');
-const config = knexConfig[process.env.NODE_ENV || 'development'];
-const knex = require('knex')(config);
+// Initialize Knex
+const knex = require('../knex')
 
 // Endpoints
+// This route would be /api
 router.get('/', (req, res) => {
-	res.send('Hello and welcome to the Turnip API!');
+	res.send('Hello and welcome to the Turnip API! ');
 });
 
 // This route would be /api/products

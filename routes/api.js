@@ -14,19 +14,22 @@ router.get('/', (req, res) => {
 
 // This route would be /api/products
 router.get('/products', (req, res) => {
-	let limit = "ALL";
-	if (req.query.limit) limit = req.query.limit;
-
+	let limit = req.query.limit;
+	
+	if (req.query.limit) {
 	knex('products')
-		.select({
-			id    : 'id',
-			name  : 'name',
-			price : 'price'
-		})
+		.select()
 		.limit(limit)
 		.then((result) => {
 			res.status(200).send(result);
 		});
+	} else {
+		knex('products')
+		.select()
+		.then((result) => {
+			res.status(200).send(result);
+		});
+	}
 });
 
 router.get('/products/:id', (req, res) => {

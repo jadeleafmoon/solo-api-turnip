@@ -1,6 +1,5 @@
 'use strict';
 
-let { products } = require('./data/products.json');
 
 // initialize Express
 const express = require('express');

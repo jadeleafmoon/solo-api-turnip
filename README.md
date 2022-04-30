@@ -39,17 +39,17 @@ GET localhost:3000/products/2
 
 
 
-### **GET /products**
+### GET /products
 
 This will get all products.
 
-Request URI Example:
+Request:
 ```
 GET /api/products
 ```
 
 Reponse:
-```
+```json
 [
     {
         "id": 1,
@@ -71,17 +71,47 @@ Reponse:
 
 
 
-### **GET /products/:id**
+### GET /products/?limit=
+
+A limit may also be specified. For example, the following Request will return the first two items.
+
+Request:
+
+```
+GET /api/products/?limit=2
+```
+
+Response:
+
+```json
+[
+    {
+        "id": 1,
+        "name": "Ball",
+        "price": 5
+    },
+    {
+        "id": 2,
+        "name": "Game",
+        "price": 10.50
+    },
+]
+```
+
+
+
+### GET /products/:id
 
 This will get a product with the specified id.
 
-Request URI Example:
+Request:
 ```
 GET /api/products/2
 ```
 
 Reponse:
-```
+
+```json
 [
     {
         "id": 2,
@@ -93,15 +123,15 @@ Reponse:
 
 
 
-### **POST /products**
+### POST /products
 
-Request URI Example:
+Request:
 ```
 POST /api/products/
 ```
 
-Request Body Example:
-```
+Request Body:
+```json
 {
     "id": 4,
     "name": "Brush",
@@ -116,15 +146,15 @@ The product Brush has been added.
 
 
 
-### **PATCH /products/:id**
+### PATCH /products/:id
 
-Request URI Example:
+Request:
 ```
 PATCH /api/products/4
 ```
 
-Request Body Example:
-```
+Request Body:
+```json
 {
     "name": "Hairbrush",
     "price": 80.50
@@ -138,9 +168,9 @@ The product Brush with id 4 has been updated.
 
 
 
-### **DELETE /products/:id**
+### DELETE /products/:id
 
-Request URI Example:
+Request:
 ```
 DELETE /api/products/3
 ```

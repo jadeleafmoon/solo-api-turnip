@@ -17,18 +17,18 @@ router.get('/products', (req, res) => {
 	let limit = req.query.limit;
 	
 	if (req.query.limit) {
-	knex('products')
-		.select()
-		.limit(limit)
-		.then((result) => {
-			res.status(200).send(result);
-		});
+		knex('products')
+			.select()
+			.limit(limit)
+			.then((result) => {
+				res.status(200).send(result);
+			});
 	} else {
 		knex('products')
-		.select()
-		.then((result) => {
-			res.status(200).send(result);
-		});
+			.select()
+			.then((result) => {
+				res.status(200).send(result);
+			});
 	}
 });
 
@@ -48,9 +48,12 @@ router.get('/products/:id', (req, res) => {
 router.post('/products', (req, res) => {
 	const newProduct = req.body;
 
-	knex('products').insert(newProduct).returning('*').then((result) => {
-		res.status(201).send(`The product ${result[0].name} has been added`);
-	});
+	knex('products')
+		.insert(newProduct)
+		.returning('*')
+		.then((result) => {
+			res.status(201).send(`The product ${result[0].name} has been added`);
+		});
 });
 
 router.patch('/products/:id', (req, res) => {
@@ -62,11 +65,8 @@ router.patch('/products/:id', (req, res) => {
 		.update(productUpdates)
 		.returning('*')
 		.then((result) => {
-			res
-				.status(200)
-				.send(
-					`The product ${productUpdates.name} with id ${id} has been updated`
-				);
+			res.status(200)
+				.send(`The product ${productUpdates.name} with id ${id} has been updated`);
 		});
 });
 
@@ -78,8 +78,7 @@ router.delete('/products/:id', (req, res) => {
 		.del()
 		.returning('*')
 		.then((result) => {
-			res
-				.status(200)
+			res.status(200)
 				.send(`The product ${result[0].name} with id ${id} has been deleted`);
 		});
 });

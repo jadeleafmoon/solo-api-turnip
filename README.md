@@ -16,7 +16,8 @@ With this API, you'll be able to browse the available products.
 Steps to using this API:
 1. Clone this repo to your computer
 2. Install and launch Postman
-3. Run localhost:3000 in Postman
+3. Create a local database on your computer called turnip_test with PSQL
+4. Run localhost:3000 in Postman
 
 Use the following format to make HTTP requests:
 ```

@@ -1,8 +1,12 @@
 # Welcome to the Turnip API!
 
+This was created during my time as a student at Code Chrysalis.
+
+
+
 <img src="./img/turnip-logo.png" alt="drawing" width="200px"/>
 
-This was created during my time as a student at Code Chrysalis.
+
 
 ### What is Turnip?
 
@@ -10,6 +14,8 @@ Turnip is an app that allows you to buy and sell used items.
 
 ### What is this API?
 With this API, you'll be able to browse the available products.
+
+
 
 ## Getting Started
 
@@ -19,13 +25,19 @@ Steps to using this API:
 3. Create a local database on your computer called turnip_test with PSQL
 4. Run localhost:3000 in Postman
 
+
+
 Use the following format to make HTTP requests:
+
 ```
 GET localhost:3000/products/2
 ```
 
 
+
 ## Endpoints
+
+
 
 ### **GET /products**
 
@@ -57,6 +69,8 @@ Reponse:
 ]
 ```
 
+
+
 ### **GET /products/:id**
 
 This will get a product with the specified id.
@@ -76,6 +90,8 @@ Reponse:
     }
 ]
 ```
+
+
 
 ### **POST /products**
 
@@ -98,6 +114,8 @@ Response:
 The product Brush has been added.
 ```
 
+
+
 ### **PATCH /products/:id**
 
 Request URI Example:
@@ -117,6 +135,8 @@ Response:
 ```
 The product Brush with id 4 has been updated.
 ```
+
+
 
 ### **DELETE /products/:id**
 

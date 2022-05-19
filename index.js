@@ -2,10 +2,11 @@
 
 
 // initialize Express
+require("dotenv").config();
 const express = require('express');
 const app = express();
 app.use(express.json());
-const PORT = 3030;
+const PORT = process.env.PORT || 3030;
 
 // Router
 app.use(require('./routes'));
